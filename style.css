@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    top: -20px;
+    color: #fff;
+    animation: animate 5s linear forwards;
+    /* you can set infinite too */
+}
+
+.star::before {
+    content: '\f005';
+    font-family: FontAwesome;
+    text-shadow: 0 0 5px #fff,
+        0 0 20px #fff,
+        0 0 50px #fff;
+}
+
+@keyframes animate {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .star {
+        font-size: 8px; 
+    }
+}
